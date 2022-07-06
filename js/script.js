@@ -6,8 +6,6 @@ const app = new Vue ({
 
         i : 0,
 
-        classelement : 'ms_line-through',
-
         todo : '',
 
         todos: [
@@ -45,13 +43,9 @@ const app = new Vue ({
             }
         },
 
-        controltodo: function (){
-            for(let index = 0; index < this.todos.length; index++){
-                
-                if(this.todos[index].done){
-                    this.todos[index].done = 'classelement'; 
-                }
-            }
+        removelementodolist: function (){
+            
+            this.todos.slice(this.todos[this.i]);
         }
 
     }
