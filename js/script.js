@@ -6,6 +6,8 @@ const app = new Vue ({
 
         i : 0,
 
+        classelement : 'ms_line-through',
+
         todo : '',
 
         todos: [
@@ -26,16 +28,32 @@ const app = new Vue ({
 
     methods : {
 
-        addelementodolist: function (newelement){
+        addelementodolist: function (){
 
-           if(newelement === ''){
+           if(this.todo === ''){
 
             } else {
+
+                const obj = {
+                    text: this.todo,
+                    done: false,
+                }
                  
-                this.todos.push(newelement);
+                this.todos.push(obj);
             
                 this.todo= '';
             }
+        },
+
+        controltodo: function (){
+            for(let index = 0; index < this.todos.length; index++){
+                
+                if(this.todos[index].done){
+                    this.todos[index].done = 'classelement'; 
+                }
+            }
         }
+
     }
 })
+
