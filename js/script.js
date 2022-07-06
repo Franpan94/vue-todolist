@@ -43,10 +43,11 @@ const app = new Vue ({
             }
         },
 
-        removelementodolist: function (){
+        removelementodolist: function (number){
             
-            this.todos.slice(this.todos[this.i]);
-        }
+            this.todos.splice(this.i,number);
+            
+        },
 
     }
 })
