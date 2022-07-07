@@ -18,10 +18,10 @@
                     <h1 class="text-center p-3"> Vue To Do List</h1>
                     <ul class="list-group">
                         
-                        <li class="list-group-item" :class="{'ms_line-through':element.done}" v-for="(element, i) in todos">
+                        <li class="list-group-item" :class="{'ms_line-through':element.done}" v-for="(element, i) in todos" @click="controlelementodolist(i)">
                             {{ element.text }}
                             <div class="p-3 ms_inline">
-                                <button @click="removelementodolist(1)" class="btn btn-danger">X</button>
+                                <button @click="removelementodolist(i)" class="btn btn-danger">X</button>
                             </div>
                         </li>
                     </ul>

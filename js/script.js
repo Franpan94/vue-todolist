@@ -4,8 +4,6 @@ const app = new Vue ({
 
     data: {
 
-        i : 0,
-
         todo : '',
 
         todos: [
@@ -43,9 +41,15 @@ const app = new Vue ({
             }
         },
 
-        removelementodolist: function (number){
+        removelementodolist: function (index){
             
-            this.todos.splice(this.i,number);
+            this.todos.splice(index,1);
+            
+        },
+
+        controlelementodolist: function (todoindex){
+            
+            this.todos[todoindex].done = !this.todos[todoindex].done;
             
         },
 

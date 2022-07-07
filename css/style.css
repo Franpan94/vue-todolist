@@ -5,3 +5,7 @@
 .ms_inline{
     display: inline-block;
 }
+
+li{
+    cursor: pointer;
+}
